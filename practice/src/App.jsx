@@ -1,8 +1,12 @@
 import ProductCard from "./ProductCard.jsx"
+import Greetings from "./Greetings.jsx"
 function App() {
   
   return (
-    <ProductCard   />
+    <>
+      <ProductCard />
+      <Greetings receivedName="John Doe" age={25} />
+    </>
   )
 } 
 

@@ -1,67 +1,57 @@
 import ProductCard from "./ProductCard.jsx";
-import  "./ProductCard.css"
+
 import './App.css';
-import BlogPost from "./BlogPost.jsx";
-import './BlogPost.css';
 
+import { useState } from 'react';
 function App() {
-  const products = [
-    {
-      productname: "pavan",
-      price:" iphone",
-      isAvailable: true
-      
-    },
-    {
-      productname   : "iphone",
-      price: "$699",
-      isAvailable: false
-    },
-    {
-      productname: "samsung",
-      price: "$799",
-      isAvailable: true
-    }
-  ];
-  const posts = [
-    {
-      id: 1,
-      Author: "teja sajja",
-      title: "mirai",
-      description: "third  pan india movie"
-    },
-    {
-      id: 2,
-      Author: "mouli",
-      title: "little hearts",
-      description: "debut movie"
-    },
-    {
-      id: 3,
-      Author: "pavan kalyan",
-      title: "OG",
-      description: "blockbuster movie"
-    }
-  ];
 
+  const [count, setCount] = useState(0);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const[formData, setFormData] = useState({
+    username: " OG",
+    password: " SUJEETH"
+  });
+  const handleIncrement = () => {
+    //SetCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
+    console.log(count); 
+  }
+  const  handleemialChange = (e) => {
+    setEmail(e.target.value);
+  }
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  }
+  const handleClick = () => {
+    console.log("Button clicked!");
+    alert("access denied");
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Email: ${email}, Password: ${password}`);  
+
+  }
+  const handleChange = (e) => {
+    console.log(e.target.name);
+    console.log(e.target.value);
+  }
+  
 
   return (
-    <div className="App">
-      {posts.map((post) => (
-        <BlogPost
-          key={post.id}
-          author={post.Author}
-          title={post.title}
-          description={post.description}
-        />
-      ))}
+    <div>
+      <p>{count}</p>
+      
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="username" placeholder="username" onChange={handleemialChange} />
+        <input type="password" name="password" placeholder="password" onChange={handlePasswordChange} />
+        <button type="submit">Submit</button>
+      </form>
+      <button onClick={handleIncrement}>Increment</button>
+    
+      
     </div>
   );
 }
 
 export default App;
-
-
-
-
-

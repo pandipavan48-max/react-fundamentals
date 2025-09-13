@@ -1,0 +1,9 @@
+.BlogPost {
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     padding: 10px;
+     margin: 50x 0;
+     justify-content: center;
+        width: 200px;
+        height: fit-content;
+ }

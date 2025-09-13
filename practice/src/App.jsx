@@ -1,22 +1,67 @@
 import ProductCard from "./ProductCard.jsx";
 import  "./ProductCard.css"
 import './App.css';
-
+import BlogPost from "./BlogPost.jsx";
+import './BlogPost.css';
 
 function App() {
-  const product = {
-   productname: " NAME:Pavan",
-    bloodgroup: " BLOOD GROUP:O+",
-    DOB: " DATE OF BIRTH:21/04/2005",
-    RollNO: " ROLL NO:23VV1A0542",
+  const products = [
+    {
+      productname: "pavan",
+      price:" iphone",
+      isAvailable: true
+      
+    },
+    {
+      productname   : "iphone",
+      price: "$699",
+      isAvailable: false
+    },
+    {
+      productname: "samsung",
+      price: "$799",
+      isAvailable: true
+    }
+  ];
+  const posts = [
+    {
+      id: 1,
+      Author: "teja sajja",
+      title: "mirai",
+      description: "third  pan india movie"
+    },
+    {
+      id: 2,
+      Author: "mouli",
+      title: "little hearts",
+      description: "debut movie"
+    },
+    {
+      id: 3,
+      Author: "pavan kalyan",
+      title: "OG",
+      description: "blockbuster movie"
+    }
+  ];
 
 
   return (
-    <div>
-      <ProductCard productname={product.productname} bloodgroup={product.bloodgroup} DOB={product.DOB} RollNO={product.RollNO} photoUrl={product.photoUrl} />
+    <div className="App">
+      {posts.map((post) => (
+        <BlogPost
+          key={post.id}
+          author={post.Author}
+          title={post.title}
+          description={post.description}
+        />
+      ))}
     </div>
-  );   
+  );
 }
 
-
 export default App;
+
+
+
+
+

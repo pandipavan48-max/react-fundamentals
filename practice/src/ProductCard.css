@@ -1,0 +1,35 @@
+.container {
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0;
+    width:400px
+}
+.title {
+    font-size: 24px;
+}
+.price {
+    font-size: 20px;
+    color: green;
+}
+.availability {
+    font-size: 18px;
+    font-style: italic;
+    color: red;
+}
+.date {
+    font-size: 18px;
+    font-style: italic;
+    color: blue;
+}
+.name {
+    font-size: 18px;
+    font-style: italic;
+    color: red;
+}   
+.rollno {
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(82, 58, 82, 0.492);
+}
